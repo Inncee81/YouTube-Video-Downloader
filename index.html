@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+   	<script>
+   		function go(loc) {
+    document.getElementById('embedResult').src = loc;
+  }
+  function getVideo()
+  {
+  	var url = document.getElementById("txt_url").value;
+                if (url == null || url == "" ) {
+                    alert("Please enter a valid Youtube URL! \nExample: https://www.youtube.com/watch?v=OxD2nEyO-ug");
+                }
+                else
+                {
+                		var url2 = 'https://maadhav-ytdl.herokuapp.com/video_info.php?url=' + url;
+                		go(url2);
+                }
+  }
+  function convertMP4()
+  {
+    alert("NOT WORKING");
+  }
+</script>
+      <meta charset="UTF-8">
+      <title>Youtube Downloader</title>
+   </head>
+   <body>
+   	<form>
+   		<center>
+        <h1>YouTube Video Downloader</h1>
+         <input type="text" placeholder="Youtube Video URL" size="80" id="txt_url" style="text-align:center;">
+         <br/>
+          <br/><input type="button" value="Get Download" onclick="getVideo()"><br/>
+     </center>
+      </form>
+     <iframe id="embedResult" src="" width="100%" height="200px" scrolling="no" style="border:none;"></iframe>
+     <center>
+       <h2>Convert MP4 to MP3 (NOT WORKING)</h2>
+       <input type="text" placeholder="MP4 Link" size="80" id="downloadLink" style="text-align:center;">
+       <br/>
+        <br/><input type="button" value="Convert" onclick="convertMP4()"><br/>
+      </center>
+   </body>
+</html>
